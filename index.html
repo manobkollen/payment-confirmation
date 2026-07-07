@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পেমেন্ট কনফার্মেশন - Payment Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ইনপুট ফর্ম -->
+        <div id="formSection" class="form-section active">
+            <div class="form-card">
+                <h1>পেমেন্ট ফর্ম</h1>
+                <p class="subtitle">Payment Form</p>
+
+                <form id="paymentForm">
+                    <!-- প্রেরক -->
+                    <div class="form-group">
+                        <label for="sender">প্রেরক (Sender)</label>
+                        <input 
+                            type="text" 
+                            id="sender" 
+                            name="sender" 
+                            placeholder="আপনার নাম লিখুন / Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <!-- পরিমান -->
+                    <div class="form-group">
+                        <label for="amount">পরিমান (Amount)</label>
+                        <input 
+                            type="number" 
+                            id="amount" 
+                            name="amount" 
+                            placeholder="৳ 5,000 / Enter amount"
+                            required
+                            min="1"
+                        >
+                    </div>
+
+                    <!-- ট্রানজেকশন -->
+                    <div class="form-group">
+                        <label for="transaction">ট্রানজেকশন (Transaction ID)</label>
+                        <input 
+                            type="text" 
+                            id="transaction" 
+                            name="transaction" 
+                            placeholder="TXN123456 / Enter transaction ID"
+                            required
+                        >
+                    </div>
+
+                    <!-- তারিখ ও সময় -->
+                    <div class="form-group">
+                        <label for="datetime">তারিখ ও সময় (Date & Time)</label>
+                        <input 
+                            type="datetime-local" 
+                            id="datetime" 
+                            name="datetime"
+                            required
+                        >
+                    </div>
+
+                    <!-- সাবমিট বাটন -->
+                    <button type="submit" class="submit-btn">সাবমিট করুন / Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- সাফল্যের পেজ -->
+        <div id="successSection" class="success-section">
+            <div class="success-card">
+                <div class="checkmark-container">
+                    <svg class="checkmark" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+
+                <h1>নিরাপদ পেমেন্ট সম্পূর্ণ হয়েছে</h1>
+                <p class="subtitle">Safe Payment Completed Successfully</p>
+
+                <div class="details-box">
+                    <div class="detail-item">
+                        <span class="label">প্রেরক (Sender):</span>
+                        <span class="value" id="displaySender">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">পরিমান (Amount):</span>
+                        <span class="value" id="displayAmount">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">ট্রানজেকশন (Transaction ID):</span>
+                        <span class="value" id="displayTransaction">-</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">তারিখ ও সময় (Date & Time):</span>
+                        <span class="value" id="displayDatetime">-</span>
+                    </div>
+                </div>
+
+                <button class="reset-btn" onclick="resetForm()">নতুন পেমেন্ট / New Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
