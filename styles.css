@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Bangla Sangam MN', 'Arial Unicode MS';
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* ফর্ম সেকশন */
+.form-section {
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.form-card .subtitle {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ফর্ম গ্রুপ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1abc9c;
+    box-shadow: 0 0 10px rgba(26, 188, 156, 0.2);
+    background-color: #f9f9f9;
+}
+
+.form-group input::placeholder {
+    color: #bbb;
+}
+
+/* সাবমিট বাটন */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* সাফল্যের সেকশন */
+.success-section {
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+.success-section.active {
+    display: block;
+}
+
+.success-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* চেকমার্ক */
+.checkmark-container {
+    margin: 0 auto 30px;
+    width: 100px;
+    height: 100px;
+}
+
+.checkmark {
+    width: 100%;
+    height: 100%;
+    animation: scaleIn 0.6s ease-out;
+}
+
+.checkmark-circle {
+    stroke: #1abc9c;
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: drawCircle 0.6s ease-out;
+}
+
+.checkmark-check {
+    stroke: #1abc9c;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: drawCheck 0.6s ease-out 0.2s both;
+}
+
+@keyframes drawCircle {
+    0% {
+        stroke-dasharray: 157;
+        stroke-dashoffset: 157;
+    }
+    100% {
+        stroke-dasharray: 157;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCheck {
+    0% {
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+    }
+    100% {
+        stroke-dasharray: 48;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-card h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    font-weight: 700;
+}
+
+.success-card .subtitle {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* বিস্তারিত বক্স */
+.details-box {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 5px solid #1abc9c;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item .label {
+    color: #666;
+    font-weight: 600;
+}
+
+.detail-item .value {
+    color: #333;
+    font-weight: 700;
+    text-align: right;
+    word-break: break-word;
+    max-width: 50%;
+}
+
+/* রিসেট বাটন */
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* অ্যানিমেশন */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* রেসপন্সিভ */
+@media (max-width: 480px) {
+    .form-card,
+    .success-card {
+        padding: 30px 20px;
+    }
+
+    .form-card h1,
+    .success-card h1 {
+        font-size: 22px;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .detail-item .value {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
